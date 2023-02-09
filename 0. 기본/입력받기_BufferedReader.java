@@ -1,7 +1,10 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+// import 문 잊지 말고 작성하기 !!!!!!!!!!!
+import java.util.*;
+import java.io.*;
+
+//(경우에 따라 ~)
+import java.lang.*;
+import java.math.*;
 
 public class 입력받기_BufferedReader {
 
@@ -14,7 +17,7 @@ public class 입력받기_BufferedReader {
     422223324 2 4
      */
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine()); // 첫번째 줄. 보통 테스트케이스 개수 (예시에서는 4)
 
