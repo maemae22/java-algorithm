@@ -19,6 +19,7 @@ public class P10986_나머지합 {
         long answer = 0;
         long[] remain = new long[M];
         for (int i=1; i<=N; i++) {
+//            int num = (int) sum[i]%M; => ⭐ 이렇게 할 경우 ArrayIndexOutOfBoundsException 발생함 ..
             int num = (int) (sum[i]%M);
             remain[num]++;
             if (num == 0) {
