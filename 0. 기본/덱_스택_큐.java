@@ -1,7 +1,4 @@
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class 덱_스택_큐 {
 
@@ -82,7 +79,11 @@ public class 덱_스택_큐 {
         queue.remove();     // queue에 첫번째 값 제거
 
         queue.peek();       // queue의 첫번째 값 참조
+        queue.size();
         queue.clear();      // queue 초기화
+
+        queue.isEmpty();
+        queue.contains(3);
 
         /*
         [위치]
@@ -98,6 +99,19 @@ public class 덱_스택_큐 {
     // ⭐ 4. 우선순위 큐 : 값이 들어간 순서와 상관 없이 우선순위가 높은 데이터가 먼저 나오는 자료구조
     // 우선순위 큐 설정에 따라 front에 항상 최댓값 또는 최솟값이 위치함
     public static void main4(String[] args) {
-        // 추후 내용 추가 예정
+
+        // 예시
+        // 우선순위 큐 선언. 정렬 기준을 새로 적용하기.
+        // 기준 : 1. 절댓값 기준으로 정렬 / 2. 절댓값이 같으면 음수 우선 정렬
+        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> {
+            int first = Math.abs(o1);
+            int second = Math.abs(o2);
+
+            if(first == second) {
+                return o1 > o2? 1 : -1; // 절댓값이 같으면 음수 우선 정렬
+            } else {
+                return first - second; // 절댓값 기준으로 정렬
+            }
+        });
     }
 }
