@@ -13,41 +13,36 @@ public class P1874_스택수열 {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
         int num = 1;
-        int NO = 0;
-
+        boolean can = true;
+        StringBuilder sb = new StringBuilder();
         Stack<Integer> stack = new Stack<>();
 
-        // 로직
         for (int i=0; i<N; i++) {
-            int now = arr[i];
-
-            if (num <= now) {
-                while (num <= now) {
-                    bw.write("+\n");
+            int su = arr[i];
+            if (su >= num) {
+                while (su>=num) {
                     stack.push(num);
                     num++;
+                    sb.append("+\n");
                 }
-                bw.write("-\n");
                 stack.pop();
-            } else if (num > now) {
-                int n = stack.pop();
-
-                if (n > now) {
-                    System.out.println("NO");
-                    NO = 1;
+                sb.append("-\n");
+            } else {
+                int pop = stack.pop();
+                if (pop > su) {
+                    can = false;
                     break;
                 } else {
-                    bw.write("-\n");
+                    sb.append("-\n");
                 }
             }
         }
 
-        if (NO == 0) {
-            bw.flush();
+        if (can) {
+            System.out.println(sb.toString());
+        } else {
+            System.out.println("NO");
         }
-        bw.close();
     }
 }
