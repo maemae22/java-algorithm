@@ -3,6 +3,7 @@ package 복습_다시풀기;
 import java.util.*;
 import java.io.*;
 
+// https://www.acmicpc.net/problem/11660
 public class P11660_구간합구하기5 {
 
     public static void main(String[] args) throws Exception {
