@@ -24,15 +24,11 @@ public class P1874_스택수열 {
         for (int i=0; i<N; i++) {
             int su = arr[i];
             if (su >= num) {
-                while (su > num) {
+                while (su >= num) {
                     stack.push(num);
                     num++;
                     sb.append("+\n");
                 }
-                // su == num
-                stack.push(num);
-                sb.append("+\n");
-                num++;
                 stack.pop();
                 sb.append("-\n");
             } else { // su < num
