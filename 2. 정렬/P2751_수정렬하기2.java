@@ -18,9 +18,11 @@ public class P2751_수정렬하기2 {
         mergeSort(arr, tmp, 0, arr.length-1);
 
         // 출력
+        StringBuilder sb = new StringBuilder();
         for (int num : arr) {
-            System.out.println(num);
+            sb.append(num).append("\n");
         }
+        System.out.println(sb.toString());
     }
 
     public static void mergeSort(int[] arr, int[] tmp, int start, int end) {
